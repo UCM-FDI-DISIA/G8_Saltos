@@ -1,22 +1,27 @@
 
-Prueba = {behaviour = behaviour}
+Prueba = {behaviour = behaviour, name = "Pene"}
 Prueba.__index = Prueba
-
+print(Prueba)
+print(Foo)
 function Prueba:new()
     local obj = {}
-    setmetatable(obj,Prueba);
-    return obj;
+    setmetatable(obj,Prueba)
+    return obj
+end
+
+function Prueba:awake()
+    print("Prueba awake")
 end
 function Prueba:update(dt)
     ---print(dt)
     ---print("Hola Buenas desde el update")
+   
     
 end
 
 function Prueba:start()
     ---self:foo()
-    v = Vector3.new(0,0,0)
-    ---print("Hola Buenas desde el update")
+   
 end
 
 function Prueba:setParameters(params) 
@@ -28,6 +33,7 @@ function Prueba:setParameters(params)
     print(params["parametro"])
 end
 
-function Prueba:foo()
+function Prueba:si()
     print("Funcion desde lua")
+    print(self.name)
 end
