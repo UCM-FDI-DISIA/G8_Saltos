@@ -5,3 +5,11 @@ font Heavitas
     size 32
     resolution 512
 }
+
+font PoetsenOne
+{
+    type truetype
+    source PoetsenOne-Regular.ttf
+    size 32
+    resolution 512
+}

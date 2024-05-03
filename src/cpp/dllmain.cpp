@@ -24,7 +24,7 @@ extern "C" __declspec(dllexport) const char* InitJuego(LocoMotor::Engine * motor
     motor->setWindowName("Juego de saltos");
 
     motor->setStartingScene("Assets/Scenes/Menu.lua", "Menu");
-    //motor->setStartingScene("Assets/Scenes/Scene.lua", "Scene");
+    //motor->setStartingScene("Assets/Scenes/Gameplay.lua", "Gameplay");
 
 #ifdef _DEBUG
     return "Juego de saltos: Running in DEBUG";
