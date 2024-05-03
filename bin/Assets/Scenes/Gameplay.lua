@@ -25,12 +25,13 @@ Gameplay = {
     Enemy = {
         Transform = {
             position = "10 0 0",
-            size = "9 5 1.5"
+            size = "0.7 0.7 0.7"
         },
         MeshRenderer = {
             mesh = "DebugCube.mesh",
             material = "DebugCube"
         },
+        EnemyController = {}
     },
     StartWall = {
         Transform = {
