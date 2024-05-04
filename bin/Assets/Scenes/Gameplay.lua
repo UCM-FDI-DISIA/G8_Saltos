@@ -24,6 +24,12 @@ Gameplay = {
         ChangeSceneOnKey = {
             key = "ESCAPE",
             scene = "Menu"
+        },
+        PlayerController = {
+            jumpKey = "W",
+            leftKey = "A",
+            rightKey = "D",
+            speed = 10
         }
     },
     Enemy = {
