@@ -38,6 +38,7 @@ Gameplay = {
         EnemyController = {}
     },
 
+    --- RANDOM PROPS ---
     Shrek = {
         Transform = {
             position = "0 -55 -20",
@@ -46,6 +47,27 @@ Gameplay = {
         MeshRenderer = {
             mesh = "Shrek.mesh",
             material = "Shrek"
+        }
+    },
+    BananaDuck = {
+        Transform = {
+            position = "-7 0 0",
+            size = "10 10 10"
+        },
+        MeshRenderer = {
+            mesh = "BananaDuck.mesh",
+            material = "BananaDuck"
+        }
+    },
+
+    GodotMan = {
+        Transform = {
+            position = "7 0 0",
+            size = "10 10 10"
+        },
+        MeshRenderer = {
+            mesh = "GodotMan.mesh",
+            material = "GodotMan"
         }
     },
 
@@ -64,20 +86,6 @@ Gameplay = {
             size = "5 20 1"  
         },
     },
-    -- Floor_01 = {
-    --     Transform = {
-    --         position = "-4 -11 0",
-    --         size = "9 5 1.5"
-    --     },
-    --     MeshRenderer = {
-    --         mesh = "DebugCube.mesh",
-    --         material = "DebugCube"
-    --     },
-    --     RigidBody = { 
-    --         mass = 0, 
-    --         size = "9 5 1"  
-    --     },
-    -- },
 
     MinecraftBlock_01 = {
         Transform = {

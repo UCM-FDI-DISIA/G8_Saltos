@@ -206,3 +206,30 @@ material Shrek {
         }
     }
 }
+
+
+material BananaDuck {
+    technique {
+        pass {
+            lighting off
+            texture_unit {
+                texture BananaDuck.jpg
+                tex_address_mode wrap
+                colour_op modulate
+            }
+        }
+    }
+}
+
+material GodotMan {
+    technique {
+        pass {
+            lighting off
+            texture_unit {
+                texture GodotMan.jpg
+                tex_address_mode wrap
+                colour_op modulate
+            }
+        }
+    }
+}
