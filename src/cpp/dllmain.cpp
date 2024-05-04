@@ -31,4 +31,3 @@ extern "C" __declspec(dllexport) const char* InitJuego(LocoMotor::Engine * motor
 #endif // _DEBUG
     return "Juego de saltos: Running in RELEASE";
 }
-
