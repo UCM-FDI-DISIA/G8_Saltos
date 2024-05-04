@@ -43,6 +43,41 @@ Gameplay = {
         },
         EnemyController = {}
     },
+
+    --- RANDOM PROPS ---
+    Shrek = {
+        Transform = {
+            position = "0 -55 -20",
+            size = "60 60 60" 
+        },
+        MeshRenderer = {
+            mesh = "Shrek.mesh",
+            material = "Shrek"
+        }
+    },
+    BananaDuck = {
+        Transform = {
+            position = "-7 0 0",
+            size = "10 10 10"
+        },
+        MeshRenderer = {
+            mesh = "BananaDuck.mesh",
+            material = "BananaDuck"
+        }
+    },
+
+    GodotMan = {
+        Transform = {
+            position = "7 0 0",
+            size = "10 10 10"
+        },
+        MeshRenderer = {
+            mesh = "GodotMan.mesh",
+            material = "GodotMan"
+        }
+    },
+
+    --- PLATFORMS ---
     StartWall = {
         Transform = {
             position = "-18 0 0",
@@ -57,14 +92,15 @@ Gameplay = {
             size = "5 20 1"  
         },
     },
-    Floor_01 = {
+
+    MinecraftBlock_01 = {
         Transform = {
             position = "-4 -11 0",
             size = "9 5 1.5"
         },
         MeshRenderer = {
-            mesh = "DebugCube.mesh",
-            material = "DebugCube"
+            mesh = "MinecraftCube.mesh",
+            material = "Grass_Block_TEX"
         },
         RigidBody = { 
             mass = 0, 
