@@ -8,7 +8,7 @@ function ChangeSceneOnKey:update(dt)
 
     local input = InputManager:Instance()
 
-    if (input:GetKeyDown(ChangeSceneOnKey.key)) then
+    if (input:getKeyDown(ChangeSceneOnKey.key)) then
         --Para concatenar strings, no es ("Hola " + "Mundo"), si no ("Hola " .. "Mundo")
         SceneManager:Instance():loadScene("Assets/Scenes/" .. ChangeSceneOnKey.scene .. ".lua", ChangeSceneOnKey.scene)
         SceneManager:Instance():changeScene(ChangeSceneOnKey.scene)

@@ -35,7 +35,7 @@ Gameplay = {
             mesh = "DebugCube.mesh",
             material = "DebugCube"
         },
-        --EnemyController = {}
+        EnemyController = {}
     },
     StartWall = {
         Transform = {

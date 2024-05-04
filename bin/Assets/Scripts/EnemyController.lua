@@ -9,7 +9,7 @@ function EnemyController:update(dt)
 
     pos.x = xVal
     
-    self.behaviour:gameObject():getTr():setPosition(pos)
+    self.behaviour:gameObject():transform():setPosition(pos)
     
 end
 
