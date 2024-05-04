@@ -12,7 +12,10 @@ Menu = {
         AudioSource = {
             PlayOnAwake = "Assets/Sounds/noseweel quepongas como musica de menu de este"
         },
-        StartGame = {},
+        ChangeSceneOnKey = {
+            key = "SPACE",
+            scene = "Gameplay"
+        }
     },
     G6 = {
         UIText = {
@@ -24,7 +27,8 @@ Menu = {
             font = "PoetsenOne",
             alignment = "l",
             colorTop = "0.13333 0.04706 0.06275",
-            colorBot = "0.13333 0.04706 0.06275"
+            colorBot = "0.13333 0.04706 0.06275",
+            sortingLayer = 2
         }
     },
     TitleText = {
@@ -37,7 +41,8 @@ Menu = {
             font = "PoetsenOne",
             alignment = "c",
             colorTop = "0.46667 0.79608 0.72549",
-            colorBot = "0.31373 0.42353 0.39216"
+            colorBot = "0.31373 0.42353 0.39216",
+            sortingLayer = 2
         }
     },
     TitleText_Shadow = {
@@ -50,7 +55,8 @@ Menu = {
             font = "PoetsenOne",
             alignment = "c",
             colorTop = "0.13333 0.04706 0.06275",
-            colorBot = "0.13333 0.04706 0.06275"
+            colorBot = "0.13333 0.04706 0.06275",
+            sortingLayer = 1
         }
     },
     TitleText_Shadow_2 = {
@@ -63,7 +69,8 @@ Menu = {
             font = "PoetsenOne",
             alignment = "c",
             colorTop = "0.13333 0.04706 0.06275",
-            colorBot = "0.13333 0.04706 0.06275"
+            colorBot = "0.13333 0.04706 0.06275",
+            sortingLayer = 1
         }
     },
     SubtitleText = {
@@ -76,7 +83,8 @@ Menu = {
             font = "PoetsenOne",
             alignment = "c",
             colorTop = "0.31373 0.42353 0.39216",
-            colorBot = "0.46667 0.79608 0.72549"
+            colorBot = "0.46667 0.79608 0.72549",
+            sortingLayer = 2
         }
     },
     SubtitleText_Shadow = {
@@ -89,7 +97,8 @@ Menu = {
             font = "PoetsenOne",
             alignment = "c",
             colorTop = "0.13333 0.04706 0.06275",
-            colorBot = "0.13333 0.04706 0.06275"
+            colorBot = "0.13333 0.04706 0.06275",
+            sortingLayer = 1
         }
     },
     SubtitleText_Shadow_2 = {
@@ -102,7 +111,8 @@ Menu = {
             font = "PoetsenOne",
             alignment = "c",
             colorTop = "0.13333 0.04706 0.06275",
-            colorBot = "0.13333 0.04706 0.06275"
+            colorBot = "0.13333 0.04706 0.06275",
+            sortingLayer = 1
         }
     },
     PlayText = {
@@ -115,7 +125,8 @@ Menu = {
             font = "PoetsenOne",
             alignment = "c",
             colorTop = "0.45882 0.72157 0.78431",
-            colorBot = "0.45882 0.72157 0.78431"
+            colorBot = "0.45882 0.72157 0.78431",
+            sortingLayer = 2
         }
     },
     PlayText_Shadow = {
@@ -128,7 +139,8 @@ Menu = {
             font = "PoetsenOne",
             alignment = "c",
             colorTop = "0.13333 0.04706 0.06275",
-            colorBot = "0.13333 0.04706 0.06275"
+            colorBot = "0.13333 0.04706 0.06275",
+            sortingLayer = 1
         }
     },
 }

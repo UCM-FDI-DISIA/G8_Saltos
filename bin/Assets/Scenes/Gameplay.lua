@@ -21,7 +21,10 @@ Gameplay = {
             mass = 2, 
             size = "1 2 1"  
         },
-        BackToMenu = {}
+        ChangeSceneOnKey = {
+            key = "ESCAPE",
+            scene = "Menu"
+        }
     },
     Enemy = {
         Transform = {
@@ -32,7 +35,7 @@ Gameplay = {
             mesh = "DebugCube.mesh",
             material = "DebugCube"
         },
-        EnemyController = {}
+        --EnemyController = {}
     },
     StartWall = {
         Transform = {
