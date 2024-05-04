@@ -11,7 +11,8 @@ Menu = {
         },
         AudioSource = {
             PlayOnAwake = "Assets/Sounds/noseweel quepongas como musica de menu de este"
-        }
+        },
+        StartGame = {},
     },
     G6 = {
         UIText = {

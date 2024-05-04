@@ -21,6 +21,7 @@ Gameplay = {
             mass = 2, 
             size = "1 2 1"  
         },
+        BackToMenu = {}
     },
     Enemy = {
         Transform = {
