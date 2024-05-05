@@ -41,7 +41,7 @@ Gameplay = {
             Volume = "2"
         }
     },
-    Enemy = {
+    Enemy1 = {
         Transform = {
             position = "10 0 0",
             size = "0.7 0.7 0.7"
@@ -50,7 +50,22 @@ Gameplay = {
             mesh = "DebugCube.mesh",
             material = "DebugCube"
         },
-        EnemyController = {}
+        EnemyController = {
+            enemyType = "0"
+        }
+    },
+    Enemy2 = {
+        Transform = {
+            position = "2 0 0",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "2"
+        }
     },
 
     --- RANDOM PROPS ---
