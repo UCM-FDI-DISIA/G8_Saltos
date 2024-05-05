@@ -10,12 +10,15 @@ Menu = {
             rotation = "0 0 0"
         },
         AudioSource = {
-            PlayOnAwake = "Assets/Sounds/noseweel quepongas como musica de menu de este"
+            PlayOnAwake = "Assets/Sounds/Effervescence.mp3",
+            Volume = "0.1",
+            Loop = "-1"
         },
         ChangeSceneOnKey = {
             key = "SPACE",
             scene = "Gameplay"
         }
+
     },
     G6 = {
         UIText = {
@@ -143,4 +146,5 @@ Menu = {
             sortingLayer = 1
         }
     },
+    
 }

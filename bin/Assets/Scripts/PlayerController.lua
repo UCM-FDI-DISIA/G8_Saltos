@@ -22,6 +22,7 @@ end
 function PlayerController:update(dt)
     if(InputManager.Instance():getKeyDown(self.jumpKey) and not self._jumping) then
         self._startJump = true
+        self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/jump.mp3",0,0,0)
     end
 end
 
@@ -38,6 +39,8 @@ function PlayerController:onCollisionEnter(other)
     local otherRb = other:getRigidBody()
     if (otherRb ~= nil) then
         local collisionGroup = otherRb:getCollisionGroup()
+        
+        self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/death.mp3",0,0,0)
         if(collisionGroup == 2) then
             self._jumping = false
         end

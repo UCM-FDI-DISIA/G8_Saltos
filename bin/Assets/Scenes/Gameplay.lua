@@ -6,7 +6,13 @@ Gameplay = {
         Camera = {
             background = "0.5 0.7 0.9"
         },
-        AudioListener = {}
+        AudioListener = {},
+        AudioSource = {
+            PlayOnAwake = "Assets/Sounds/Effervescence.mp3",
+            Volume = "0.01",
+            Loop = "-1"
+        }
+
     },
     Player = {
         Transform = {
@@ -30,6 +36,9 @@ Gameplay = {
             leftKey = "A",
             rightKey = "D",
             speed = 10
+        },
+        AudioSource = {
+            Volume = "2"
         }
     },
     Enemy = {
