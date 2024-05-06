@@ -1,3 +1,9 @@
+-- Collission Groups
+-- 1: Floor/Platforms
+-- 2: Player
+-- 3: Enemies
+-- 4: Walls
+
 Gameplay = {
     MainCamera = {
         Transform = {
@@ -25,7 +31,8 @@ Gameplay = {
         },
         RigidBody = { 
             mass = 2, 
-            size = "1 2 1"  
+            size = "1 2 1" , 
+            group = 2
         },
         ChangeSceneOnKey = {
             key = "ESCAPE",
@@ -69,37 +76,37 @@ Gameplay = {
     },
 
     --- RANDOM PROPS ---
-    Shrek = {
-        Transform = {
-            position = "0 -55 -20",
-            size = "60 60 60" 
-        },
-        MeshRenderer = {
-            mesh = "Shrek.mesh",
-            material = "Shrek"
-        }
-    },
-    BananaDuck = {
-        Transform = {
-            position = "-7 0 0",
-            size = "10 10 10"
-        },
-        MeshRenderer = {
-            mesh = "BananaDuck.mesh",
-            material = "BananaDuck"
-        }
-    },
+    -- Shrek = {
+    --     Transform = {
+    --         position = "0 -55 -20",
+    --         size = "60 60 60" 
+    --     },
+    --     MeshRenderer = {
+    --         mesh = "Shrek.mesh",
+    --         material = "Shrek"
+    --     }
+    -- },
+    -- BananaDuck = {
+    --     Transform = {
+    --         position = "-7 0 0",
+    --         size = "10 10 10"
+    --     },
+    --     MeshRenderer = {
+    --         mesh = "BananaDuck.mesh",
+    --         material = "BananaDuck"
+    --     }
+    -- },
 
-    GodotMan = {
-        Transform = {
-            position = "7 0 0",
-            size = "10 10 10"
-        },
-        MeshRenderer = {
-            mesh = "GodotMan.mesh",
-            material = "GodotMan"
-        }
-    },
+    -- GodotMan = {
+    --     Transform = {
+    --         position = "7 0 0",
+    --         size = "10 10 10"
+    --     },
+    --     MeshRenderer = {
+    --         mesh = "GodotMan.mesh",
+    --         material = "GodotMan"
+    --     }
+    -- },
 
     --- PLATFORMS ---
     StartWall = {
@@ -113,7 +120,8 @@ Gameplay = {
         },
         RigidBody = { 
             mass = 0, 
-            size = "5 20 1"  
+            size = "5 20 1",
+            group = 1
         },
     },
 
@@ -126,9 +134,10 @@ Gameplay = {
             mesh = "MinecraftCube.mesh",
             material = "Grass_Block_TEX"
         },
-        RigidBody = { 
-            mass = 0, 
-            size = "9 5 1"  
+        RigidBody = {
+            mass = 0,
+            size = "9 5 1",
+            group = 1,
         },
     }
 }
