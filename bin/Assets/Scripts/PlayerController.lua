@@ -62,7 +62,10 @@ function PlayerController:onCollisionEnter(other)
     if (otherRb ~= nil) then
         local collisionGroup = otherRb:getCollisionGroup()
         
-        self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/death.mp3",0,0,0)
+        if(other:getBehaviour("EnemyController")~=nil) then
+            self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/death.mp3",0,0,0)
+        end
+
         if(collisionGroup == 1) then
             self._onGround = true
         end
