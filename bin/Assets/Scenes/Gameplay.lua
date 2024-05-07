@@ -63,7 +63,13 @@ Gameplay = {
         },
         EnemyController = {
             enemyType = "0"
-        }
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
     },
     Enemy2 = {
         Transform = {
@@ -76,7 +82,14 @@ Gameplay = {
         },
         EnemyController = {
             enemyType = "2"
-        }
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
     },
 
     --- RANDOM PROPS ---
