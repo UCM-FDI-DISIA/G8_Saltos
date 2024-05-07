@@ -17,6 +17,10 @@ Gameplay = {
             PlayOnAwake = "Assets/Sounds/Effervescence.mp3",
             Volume = "0.01",
             Loop = "-1"
+        },
+        CameraFollow = {
+            followObj = "Player",
+            maxXValue = "5"
         }
 
     },
