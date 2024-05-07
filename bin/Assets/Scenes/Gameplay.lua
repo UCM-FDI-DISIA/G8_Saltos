@@ -32,7 +32,7 @@ Gameplay = {
         RigidBody = { 
             mass = 2, 
             size = "1 2 1" , 
-            group = 2
+            group = "player"
         },
         ChangeSceneOnKey = {
             key = "ESCAPE",
@@ -134,7 +134,6 @@ Gameplay = {
         RigidBody = { 
             mass = 0, 
             size = "5 20 1",
-            group = 1
         },
     },
 
@@ -150,7 +149,6 @@ Gameplay = {
         RigidBody = {
             mass = 0,
             size = "9 5 1",
-            group = 1,
         },
     }
 }
