@@ -36,6 +36,8 @@ function EnemyController:setParameters(params)
     for name, param in pairs(params) do
         if (name == "enemyType") then
             self._enemyType = param
+        elseif (name == "maxDirectionTime") then
+            self._maxDirectionTime = tonumber(param)
         end
     end 
 end

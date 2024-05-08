@@ -56,7 +56,7 @@ Gameplay = {
     },
     Enemy1 = {
         Transform = {
-            position = "10 0 0",
+            position = "8 0 0",
             size = "0.7 0.7 0.7"
         },
         MeshRenderer = {
@@ -64,7 +64,8 @@ Gameplay = {
             material = "DebugCube"
         },
         EnemyController = {
-            enemyType = "0"
+            enemyType = "0",
+            maxDirectionTime = "4"
         },
         RigidBody = { 
             mass = 0, 
@@ -72,10 +73,11 @@ Gameplay = {
             group = 1,
             isTrigger=""
         },
+
     },
     Enemy2 = {
         Transform = {
-            position = "2 0 0",
+            position = "26 9 0",
             size = "0.7 0.7 0.7"
         },
         MeshRenderer = {
@@ -83,7 +85,113 @@ Gameplay = {
             material = "DebugCube"
         },
         EnemyController = {
-            enemyType = "2"
+            enemyType = "1",
+            maxDirectionTime = "1.5"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
+    },
+    Enemy3 = {
+        Transform = {
+            position = "49 9 0",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "1",
+            maxDirectionTime = "1.7"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
+    },
+    Enemy4 = {
+        Transform = {
+            position = "71 9 0",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "1",
+            maxDirectionTime = "1.5"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
+    },
+    Enemy5 = {
+        Transform = {
+            position = "77.5 6 0",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "1",
+            maxDirectionTime = "5"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
+    },
+    Enemy6 = {
+        Transform = {
+            position = "65 -7 0",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "0",
+            maxDirectionTime = "7"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
+    },
+    Enemy7 = {
+        Transform = {
+            position = "70 0 0",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "0",
+            maxDirectionTime = "3"
         },
         RigidBody = { 
             mass = 0, 
@@ -108,9 +216,9 @@ Gameplay = {
     },
     BananaDuck = {
         Transform = {
-            position = "30 0 -10",
-            size = "10 10 10",
-            rotation = "0 0 82"
+            position = "40 0 -15",
+            size = "15 15 15",
+            rotation = "0 0 40"
         },
         MeshRenderer = {
             mesh = "BananaDuck.mesh",
@@ -120,9 +228,9 @@ Gameplay = {
 
     GodotMan = {
         Transform = {
-            position = "70 0 -10",
-            size = "10 10 10",
-            rotation = "0 0 -95"
+            position = "70 0 -12",
+            size = "11 11 11",
+            rotation = "0 0 -51"
         },
         MeshRenderer = {
             mesh = "GodotMan.mesh",
@@ -143,6 +251,21 @@ Gameplay = {
         RigidBody = { 
             mass = 0, 
             size = "5 20 1",
+        },
+    },
+    --para que no se ponga encima de la pared
+    StartCeiling = {
+        Transform = {
+            position = "-18 13 0",
+            size = "10 1 1.5"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "10 1 1",
         },
     },
 
