@@ -33,13 +33,15 @@ function PlayerController:update(dt)
         self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/jump.mp3",0,0,0)
     end
 
+    local rot = Vector3.new(0,0,0)
     if(input:getKey(self._rightKey)) then
-        print("right")
         self._walkingRight = true
-    end
-
-    if(input:getKey(self._leftKey)) then
+        rot.y = 60
+        self.behaviour:gameObject():transform():setRotation(rot:asRotToQuaternion())
+    elseif (input:getKey(self._leftKey)) then
         self._walkingLeft = true
+        rot.y = -60
+        self.behaviour:gameObject():transform():setRotation(rot:asRotToQuaternion())
     end
 end
 
@@ -47,20 +49,20 @@ function PlayerController:fixedUpdate()
     local targetSpeed = 0;
     local force = Vector3.new(0,0,0)
     if (self._startJump) then
-        force = force + Vector3.new(0,self._jumpImpulse,0)
+        print(self._jumpImpulse)
+        force = Vector3.new(0,self._jumpImpulse,0)
+        self._rb:applyCentralImpulse(force)
         self._onGround = false
         self._startJump = false
     end
 
-    if(self._walkingLeft and not self._walkingRight) then
+    if (self._walkingLeft and not self._walkingRight) then
         targetSpeed = self._speed
-        self._rb:addForce(Vector3.new(-1,0,0) * self._speed)
+        self._rb:addForce(Vector3.new(-self._speed,0,0))
     elseif (self._walkingRight) then
-        self._rb:addForce(Vector3.new(1,0,0) * self._speed)
+        self._rb:addForce(Vector3.new(self._speed,0,0))
         targetSpeed = self._speed
     end
-    force:normalize()
-    self._rb:applyCentralImpulse(force * self._jumpImpulse)
     self._walkingLeft = false
     self._walkingRight = false
 end
@@ -91,6 +93,8 @@ function PlayerController:setParameters(params)
             self._rightKey = param
         elseif (name == "speed") then
             self._speed = param
+        elseif (name == "jumpStrengh") then
+            self._jumpImpulse = param
         end
     end 
 end
