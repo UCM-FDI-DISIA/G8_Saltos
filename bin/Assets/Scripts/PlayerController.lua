@@ -22,6 +22,7 @@ PlayerController._doubleJumpReady = false
 PlayerController.currentRot = 0
 PlayerController.rotationVelocity = 300
 PlayerController.lastRotY = 60
+PlayerController._blockInput = false
 
 
 function PlayerController:awake()
@@ -31,52 +32,53 @@ function PlayerController:awake()
         self._rb:freezeRotation(Vector3.new(0,0,0))
        
     end
-
+    self._blockInput = false
 end
 
 function PlayerController:update(dt)
     local input = InputManager.Instance()
 
-
-
-    if(input:getKeyDown(self._jumpKey) and self._onGround) then
+    local rot = Vector3.new(0,self.lastRotY,0)
+    if (not self._blockInput) then
+        if(input:getKeyDown(self._jumpKey) and self._onGround) then
         self._startJump = true
         self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/jump.mp3",0,0,0)
         
-    end
+        end
 
-    --- Gestionar doble salto
-    if (input:getKeyDown(self._jumpKey) and self._onGround == false and self._doubleJumpReady) then
-        self._startJump = true
-        self._doubleJumpReady = false;
-        self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/jump.mp3",0,0,0)
-    end
+        --- Gestionar doble salto
+        if (input:getKeyDown(self._jumpKey) and self._onGround == false and self._doubleJumpReady) then
+            self._startJump = true
+            self._doubleJumpReady = false;
+            self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/jump.mp3",0,0,0)
+        end
 
-    --- Resetear doble salto al tocar suelo
-    if (self._onGround ) then
-        self._doubleJumpReady = true;
-    end
+        --- Resetear doble salto al tocar suelo
+        if (self._onGround ) then
+            self._doubleJumpReady = true;
+        end
 
-    local rot = Vector3.new(0,self.lastRotY,0)
-    if(input:getKey(self._rightKey)) then
-        self._walkingRight = true
+       
+        if(input:getKey(self._rightKey)) then
+            self._walkingRight = true
 
-        --- Girar personaje en el aire
-        self.currentRot = self.currentRot + dt/1000 * self.rotationVelocity;
-        rot.x = self.currentRot
+            --- Girar personaje en el aire
+            self.currentRot = self.currentRot + dt/1000 * self.rotationVelocity;
+            rot.x = self.currentRot
 
-        self.lastRotY = 60
-        rot.y = 60
-    elseif (input:getKey(self._leftKey)) then
+            self.lastRotY = 60
+            rot.y = 60
+        elseif (input:getKey(self._leftKey)) then
 
-        self._walkingLeft = true
+            self._walkingLeft = true
 
-        --- Girar personaje en el aire, en la direccion contraria
-        self.currentRot = self.currentRot + dt/1000 * self.rotationVelocity;
-        rot.x = self.currentRot
+            --- Girar personaje en el aire, en la direccion contraria
+            self.currentRot = self.currentRot + dt/1000 * self.rotationVelocity;
+            rot.x = self.currentRot
 
-        self.lastRotY = -60
-        rot.y = -60
+            self.lastRotY = -60
+            rot.y = -60
+        end
     end
 
     local deathnum=-10
@@ -135,7 +137,8 @@ function PlayerController:onCollisionEnter(other)
             self._onGround = true
             if(other:getName()=="GOAL")then
                 self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/success.mp3",0,0,0)
-                self._win=true
+                self._blockInput = true
+                self._win = true
             end
         end
     end
