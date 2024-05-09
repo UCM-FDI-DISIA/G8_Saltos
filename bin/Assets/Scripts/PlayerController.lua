@@ -15,7 +15,7 @@ PlayerController._walkingLeft = false
 PlayerController._walkingRight = false
 PlayerController._timer = 0
 PlayerController._rb = nil
-
+PlayerController._resetPos = false
 function PlayerController:awake()
     self._rb = self.behaviour:gameObject():getRigidBody()
     self._tr = self.behaviour:gameObject():transform()
@@ -46,12 +46,15 @@ function PlayerController:update(dt)
         self.behaviour:gameObject():transform():setRotation(rot:asRotToQuaternion())
     end
 
-    local deathnum=-10;
-    
+    local deathnum=-10
     
     if(deathnum > self.behaviour:gameObject():transform():getPosition().y)then
-
-        self.behaviour:gameObject():transform():setPosition(Vector3.new(0,-4,0))
+        self._resetPos = true
+    end
+    if(self._resetPos) then
+      self.behaviour:gameObject():transform():setPosition(Vector3.new(0,-4,0))
+      self._rb:setLinearVelocity(Vector3.new(0,0,0))
+      self._resetPos = false
     end
 end
 
@@ -81,9 +84,9 @@ function PlayerController:onCollisionEnter(other)
     local otherRb = other:getRigidBody()
     if (otherRb ~= nil) then
         local collisionGroup = otherRb:getCollisionGroup()
-        
         if(other:getBehaviour("EnemyController")~=nil) then
             self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/death.mp3",0,0,0)
+            self._resetPos=true
         end
 
         if(collisionGroup == "static") then
