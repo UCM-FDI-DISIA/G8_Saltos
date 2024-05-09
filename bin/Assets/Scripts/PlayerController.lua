@@ -19,6 +19,10 @@ PlayerController._winCountDown = 2000
 PlayerController._rb = nil
 PlayerController._resetPos = false
 PlayerController._doubleJumpReady = false
+PlayerController.currentRot = 0
+PlayerController.rotationVelocity = 300
+PlayerController.lastRotY = 60
+
 
 function PlayerController:awake()
     self._rb = self.behaviour:gameObject():getRigidBody()
@@ -32,35 +36,47 @@ end
 
 function PlayerController:update(dt)
     local input = InputManager.Instance()
-    
+
+
+
     if(input:getKeyDown(self._jumpKey) and self._onGround) then
         self._startJump = true
         self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/jump.mp3",0,0,0)
         
     end
 
-    --- Double Jump Logic
+    --- Gestionar doble salto
     if (input:getKeyDown(self._jumpKey) and self._onGround == false and self._doubleJumpReady) then
         self._startJump = true
         self._doubleJumpReady = false;
         self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/jump.mp3",0,0,0)
     end
 
-    --- Reset Double Jump
+    --- Resetear doble salto al tocar suelo
     if (self._onGround ) then
         self._doubleJumpReady = true;
     end
 
-
-    local rot = Vector3.new(0,0,0)
+    local rot = Vector3.new(0,self.lastRotY,0)
     if(input:getKey(self._rightKey)) then
         self._walkingRight = true
+
+        --- Girar personaje en el aire
+        self.currentRot = self.currentRot + dt/1000 * self.rotationVelocity;
+        rot.x = self.currentRot
+
+        self.lastRotY = 60
         rot.y = 60
-        self.behaviour:gameObject():transform():setRotation(rot:asRotToQuaternion())
     elseif (input:getKey(self._leftKey)) then
+
         self._walkingLeft = true
+
+        --- Girar personaje en el aire, en la direccion contraria
+        self.currentRot = self.currentRot + dt/1000 * self.rotationVelocity;
+        rot.x = self.currentRot
+
+        self.lastRotY = -60
         rot.y = -60
-        self.behaviour:gameObject():transform():setRotation(rot:asRotToQuaternion())
     end
 
     local deathnum=-10
@@ -75,10 +91,13 @@ function PlayerController:update(dt)
     end
     if(self._win)then
         self._timer=self._timer + dt
+        rot.y = self._timer
         if(self._timer>self._winCountDown)then
             SceneManager:Instance():changeScene("Menu")
         end
     end
+
+    self.behaviour:gameObject():transform():setRotation(rot:asRotToQuaternion())
 
 end
 
@@ -86,7 +105,6 @@ function PlayerController:fixedUpdate()
     local targetSpeed = 0;
     local force = Vector3.new(0,0,0)
     if (self._startJump) then
-        print(self._jumpImpulse)
         force = Vector3.new(0,self._jumpImpulse,0)
         self._rb:applyCentralImpulse(force)
         self._onGround = false
