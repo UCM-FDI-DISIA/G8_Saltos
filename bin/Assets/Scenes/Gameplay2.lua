@@ -10,7 +10,7 @@ Gameplay2 = {
             position = "0 0 25"
         },
         Camera = {
-            background = "0.5 0.7 0.9"
+            background = "0.7 0.6 0.2"
         },
         AudioListener = {},
         AudioSource = {
@@ -54,6 +54,90 @@ Gameplay2 = {
         AudioSource = {
             Volume = "2"
         }
+    },
+    EnemyDec1 = {
+        Transform = {
+            position = "-10 4 -2.5",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "2",
+            maxDirectionTime = "2"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
+    },
+    EnemyDec2 = {
+        Transform = {
+            position = "-10 6 -3",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "2",
+            maxDirectionTime = "1.5"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
+    },
+    EnemyDec3 = {
+        Transform = {
+            position = "-8 4 -2.75",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "2",
+            maxDirectionTime = "1.75"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
+    },
+    EnemyDec4 = {
+        Transform = {
+            position = "-8 6 -2.7",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "2",
+            maxDirectionTime = "1.7"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
     },
     Enemy1 = {
         Transform = {
@@ -193,6 +277,48 @@ Gameplay2 = {
         EnemyController = {
             enemyType = "0",
             maxDirectionTime = "3"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
+    },
+    Enemy8 = {
+        Transform = {
+            position = "54 -4 4",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "2",
+            maxDirectionTime = "6"
+        },
+        RigidBody = { 
+            mass = 0, 
+            size = "0.7 0.7 0.7",
+            group = 1,
+            isTrigger=""
+        },
+
+    },
+    Enemy9 = {
+        Transform = {
+            position = "20 3 0",
+            size = "0.7 0.7 0.7"
+        },
+        MeshRenderer = {
+            mesh = "DebugCube.mesh",
+            material = "DebugCube"
+        },
+        EnemyController = {
+            enemyType = "2",
+            maxDirectionTime = "6"
         },
         RigidBody = { 
             mass = 0, 
