@@ -4,7 +4,7 @@
 -- 3: Enemies
 -- 4: Walls
 
-Gameplay = {
+Gameplay2 = {
     MainCamera = {
         Transform = {
             position = "0 0 25"
@@ -211,7 +211,7 @@ Gameplay = {
         },
         MeshRenderer = {
             mesh = "Shrek.mesh",
-            material = "Shrek"
+            material = "RedCharacter"
         }
     },
     BananaDuck = {
