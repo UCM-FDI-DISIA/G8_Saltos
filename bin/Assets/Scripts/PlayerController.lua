@@ -13,7 +13,9 @@ PlayerController._onGround = true
 PlayerController._firstJump = false
 PlayerController._walkingLeft = false
 PlayerController._walkingRight = false
+PlayerController._win = false
 PlayerController._timer = 0
+PlayerController._winCountDown = 2000
 PlayerController._rb = nil
 PlayerController._resetPos = false
 function PlayerController:awake()
@@ -56,6 +58,13 @@ function PlayerController:update(dt)
       self._rb:setLinearVelocity(Vector3.new(0,0,0))
       self._resetPos = false
     end
+    if(self._win)then
+        self._timer=self._timer + dt
+        if(self._timer>self._winCountDown)then
+            SceneManager:Instance():changeScene("Menu")
+        end
+    end
+
 end
 
 function PlayerController:fixedUpdate()
@@ -93,6 +102,7 @@ function PlayerController:onCollisionEnter(other)
             self._onGround = true
             if(other:getName()=="GOAL")then
                 self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/success.mp3",0,0,0)
+                self._win=true
             end
         end
     end
