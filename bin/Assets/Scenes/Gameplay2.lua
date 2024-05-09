@@ -60,8 +60,8 @@ Gameplay2 = {
             size = "0.7 0.7 0.7"
         },
         MeshRenderer = {
-            mesh = "DebugCube.mesh",
-            material = "DebugCube"
+            mesh = "ConemanMesh.mesh",
+            material = "RedCharacter"
         },
         EnemyController = {
             enemyType = "0",
@@ -81,8 +81,8 @@ Gameplay2 = {
             size = "0.7 0.7 0.7"
         },
         MeshRenderer = {
-            mesh = "DebugCube.mesh",
-            material = "DebugCube"
+            mesh = "ConemanMesh.mesh",
+            material = "RedCharacter"
         },
         EnemyController = {
             enemyType = "1",
@@ -102,8 +102,8 @@ Gameplay2 = {
             size = "0.7 0.7 0.7"
         },
         MeshRenderer = {
-            mesh = "DebugCube.mesh",
-            material = "DebugCube"
+            mesh = "ConemanMesh.mesh",
+            material = "RedCharacter"
         },
         EnemyController = {
             enemyType = "1",
@@ -123,8 +123,8 @@ Gameplay2 = {
             size = "0.7 0.7 0.7"
         },
         MeshRenderer = {
-            mesh = "DebugCube.mesh",
-            material = "DebugCube"
+            mesh = "ConemanMesh.mesh",
+            material = "RedCharacter"
         },
         EnemyController = {
             enemyType = "1",
@@ -144,8 +144,8 @@ Gameplay2 = {
             size = "0.7 0.7 0.7"
         },
         MeshRenderer = {
-            mesh = "DebugCube.mesh",
-            material = "DebugCube"
+            mesh = "ConemanMesh.mesh",
+            material = "RedCharacter"
         },
         EnemyController = {
             enemyType = "1",
@@ -165,8 +165,8 @@ Gameplay2 = {
             size = "0.7 0.7 0.7"
         },
         MeshRenderer = {
-            mesh = "DebugCube.mesh",
-            material = "DebugCube"
+            mesh = "ConemanMesh.mesh",
+            material = "RedCharacter"
         },
         EnemyController = {
             enemyType = "0",
@@ -186,8 +186,8 @@ Gameplay2 = {
             size = "0.7 0.7 0.7"
         },
         MeshRenderer = {
-            mesh = "DebugCube.mesh",
-            material = "DebugCube"
+            mesh = "ConemanMesh.mesh",
+            material = "RedCharacter"
         },
         EnemyController = {
             enemyType = "0",
