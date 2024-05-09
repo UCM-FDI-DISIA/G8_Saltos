@@ -28,9 +28,11 @@ end
 
 function PlayerController:update(dt)
     local input = InputManager.Instance()
+    
     if(input:getKeyDown(self._jumpKey) and self._onGround) then
         self._startJump = true
         self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/jump.mp3",0,0,0)
+        
     end
 
     local rot = Vector3.new(0,0,0)
@@ -42,6 +44,14 @@ function PlayerController:update(dt)
         self._walkingLeft = true
         rot.y = -60
         self.behaviour:gameObject():transform():setRotation(rot:asRotToQuaternion())
+    end
+
+    local deathnum=-10;
+    
+    
+    if(deathnum > self.behaviour:gameObject():transform():getPosition().y)then
+
+        self.behaviour:gameObject():transform():setPosition(Vector3.new(0,-4,0))
     end
 end
 
