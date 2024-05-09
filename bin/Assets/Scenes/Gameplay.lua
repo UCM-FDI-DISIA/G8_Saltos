@@ -5,6 +5,7 @@
 -- 4: Walls
 
 Gameplay = {
+
     MainCamera = {
         Transform = {
             position = "0 0 25"
@@ -522,6 +523,21 @@ Gameplay = {
             mass = 0,
             size = "1 1 1"
         },
+    },
+
+    TimerText = {
+        UIText = {
+            anchor = "0 0",
+            position = "25 25",
+            pivot = "0 0",
+            size = "0 50",
+            text = "Timer : 0",
+            font = "Heavitas",
+            alignment = "l",
+            colorTop = "0.4 0.4 0.4",
+            colorBot = "0 0 0"
+        },
+        Timer = {}
     },
 
     GOAL = {
