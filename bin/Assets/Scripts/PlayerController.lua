@@ -18,6 +18,8 @@ PlayerController._timer = 0
 PlayerController._winCountDown = 2000
 PlayerController._rb = nil
 PlayerController._resetPos = false
+PlayerController._doubleJumpReady = false
+
 function PlayerController:awake()
     self._rb = self.behaviour:gameObject():getRigidBody()
     self._tr = self.behaviour:gameObject():transform()
@@ -36,6 +38,19 @@ function PlayerController:update(dt)
         self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/jump.mp3",0,0,0)
         
     end
+
+    --- Double Jump Logic
+    if (input:getKeyDown(self._jumpKey) and self._onGround == false and self._doubleJumpReady) then
+        self._startJump = true
+        self._doubleJumpReady = false;
+        self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/jump.mp3",0,0,0)
+    end
+
+    --- Reset Double Jump
+    if (self._onGround ) then
+        self._doubleJumpReady = true;
+    end
+
 
     local rot = Vector3.new(0,0,0)
     if(input:getKey(self._rightKey)) then
