@@ -88,6 +88,9 @@ function PlayerController:onCollisionEnter(other)
 
         if(collisionGroup == "static") then
             self._onGround = true
+            if(other:getName()=="GOAL")then
+                self.behaviour:gameObject():getAudioSource():playSound("Assets/Sounds/success.mp3",0,0,0)
+            end
         end
     end
 end
